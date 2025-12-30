@@ -18,9 +18,6 @@ local function playSound(soundId)
     end)
 end
 
--- Play initial sound
-playSound("2865227271")
-
 -- GUI Creation
 local ScreenGui = Instance.new("ScreenGui")
 ScreenGui.Name = "Bear Hud Ring"
@@ -44,7 +41,7 @@ Title.Size = UDim2.new(1, 0, 0, 40)
 Title.Position = UDim2.new(0, 0, 0, 0)
 Title.Text = "Bear hud Ring"
 Title.TextColor3 = Color3.fromRGB(255,255,255) -- Dark brown
-Title.BackgroundColor3 = Color3.fromRGB(0,0,255) -- Lighter brown
+Title.BackgroundColor3 = Color3.fromRGB(0,0,0) -- Lighter brown
 Title.Font = Enum.Font.Fondamento -- More elegant font
 Title.TextSize = 20
 Title.Parent = MainFrame
@@ -103,7 +100,7 @@ local RadiusDisplay = Instance.new("TextLabel")
 RadiusDisplay.Size = UDim2.new(0.4, 0, 0, 35)
 RadiusDisplay.Position = UDim2.new(0.3, 0, 0.6, 0)
 RadiusDisplay.Text = "Radius: 50"
-RadiusDisplay.BackgroundColor3 = Color3.fromRGB(255,0,0) -- Tan
+RadiusDisplay.BackgroundColor3 = Color3.fromRGB(0,,0,0) -- Tan
 RadiusDisplay.TextColor3 = Color3.fromRGB(0,0,255) -- Dark brown
 RadiusDisplay.Font = Enum.Font.Fondamento
 RadiusDisplay.TextSize = 18
@@ -118,7 +115,7 @@ local Watermark = Instance.new("TextLabel")
 Watermark.Size = UDim2.new(1, 0, 0, 20)
 Watermark.Position = UDim2.new(0, 0, 1, -20)
 Watermark.Text = "Bear hud Ring -  By Quang Huy"
-Watermark.TextColor3 = Color3.fromRGB(255,255,0) -- Dark brown
+Watermark.TextColor3 = Color3.fromRGB(255,255,255) -- Dark brown
 Watermark.BackgroundTransparency = 1
 Watermark.Font = Enum.Font.Fondamento
 Watermark.TextSize = 14
@@ -161,7 +158,6 @@ MinimizeButton.MouseButton1Click:Connect(function()
         RadiusDisplay.Visible = true
         Watermark.Visible = true
     end
-    playSound("12221967")
 end)
 
 -- Make GUI draggable
@@ -299,19 +295,16 @@ ToggleButton.MouseButton1Click:Connect(function()
     ringPartsEnabled = not ringPartsEnabled
     ToggleButton.Text = ringPartsEnabled and "Ring Parts On" or "Ring Parts Off"
     ToggleButton.BackgroundColor3 = ringPartsEnabled and Color3.fromRGB(50, 205, 50) or Color3.fromRGB(160, 82, 45)
-    playSound("12221967")
 end)
 
 DecreaseRadius.MouseButton1Click:Connect(function()
     radius = math.max(10, radius - 5)
     RadiusDisplay.Text = "Radius: " .. radius
-    playSound("12221967")
 end)
 
 IncreaseRadius.MouseButton1Click:Connect(function()
     radius = math.min(100, radius + 5)
     RadiusDisplay.Text = "Radius: " .. radius
-    playSound("12221967")
 end)
 
 -- Notifications

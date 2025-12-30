@@ -30,7 +30,7 @@ ScreenGui.Parent = LocalPlayer:WaitForChild("PlayerGui")
 local MainFrame = Instance.new("Frame")
 MainFrame.Size = UDim2.new(0, 220, 0, 190)
 MainFrame.Position = UDim2.new(0.5, -110, 0.5, -95)
-MainFrame.BackgroundColor3 = Color3.fromRGB(205, 170, 125) -- Light brown
+MainFrame.BackgroundColor3 = Color3.fromRGB(0,0,0) -- Light brown
 MainFrame.BorderSizePixel = 0
 MainFrame.Parent = ScreenGui
 
@@ -313,23 +313,3 @@ IncreaseRadius.MouseButton1Click:Connect(function()
     RadiusDisplay.Text = "Radius: " .. radius
     playSound("12221967")
 end)
-
--- Notifications
-StarterGui:SetCore("SendNotification", {
-    Title = "Follow Huy Script đŸ‡»đŸ‡³!",
-    Text = "Script by Quang Huy !!!",
-    Duration = 5
-})
-
--- Get player thumbnail
-local userId = Players:GetUserIdFromNameAsync("NannaDev")
-local thumbType = Enum.ThumbnailType.HeadShot
-local thumbSize = Enum.ThumbnailSize.Size420x420
-local content, isReady = Players:GetUserThumbnailAsync(userId, thumbType, thumbSize)
-
-StarterGui:SetCore("SendNotification", {
-    Title = "Bear Ring Hud",
-    Text = "by Quang Huy",
-    Icon = content,
-    Duration = 5
-})

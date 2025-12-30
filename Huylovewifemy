@@ -18,6 +18,9 @@ local function playSound(soundId)
     end)
 end
 
+-- Play initial sound
+playSound("2865227271")
+
 -- GUI Creation
 local ScreenGui = Instance.new("ScreenGui")
 ScreenGui.Name = "Bear Hud Ring"
@@ -158,6 +161,7 @@ MinimizeButton.MouseButton1Click:Connect(function()
         RadiusDisplay.Visible = true
         Watermark.Visible = true
     end
+    playSound("12221967")
 end)
 
 -- Make GUI draggable
@@ -295,16 +299,19 @@ ToggleButton.MouseButton1Click:Connect(function()
     ringPartsEnabled = not ringPartsEnabled
     ToggleButton.Text = ringPartsEnabled and "Ring Parts On" or "Ring Parts Off"
     ToggleButton.BackgroundColor3 = ringPartsEnabled and Color3.fromRGB(50, 205, 50) or Color3.fromRGB(160, 82, 45)
+    playSound("12221967")
 end)
 
 DecreaseRadius.MouseButton1Click:Connect(function()
     radius = math.max(10, radius - 5)
     RadiusDisplay.Text = "Radius: " .. radius
+    playSound("12221967")
 end)
 
 IncreaseRadius.MouseButton1Click:Connect(function()
     radius = math.min(100, radius + 5)
     RadiusDisplay.Text = "Radius: " .. radius
+    playSound("12221967")
 end)
 
 -- Notifications

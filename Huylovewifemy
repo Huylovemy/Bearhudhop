@@ -43,10 +43,9 @@ local Title = Instance.new("TextLabel")
 Title.Size = UDim2.new(1, 0, 0, 40)
 Title.Position = UDim2.new(0, 0, 0, 0)
 Title.Text = "Bear Ring Hud"
-Title.TextColor3 = Color3.fromRGB(101, 67, 33) -- Dark brown
-Title.BackgroundColor3 = Color3.fromRGB(222, 184, 135) -- Lighter brown
-Title.Font = Enum.Font.Fondamento -- More elegant font
-Title.TextSize = 22
+Title.TextColor3 = Color3.fromRGB(255,255,255) -- Dark brown
+Title.BackgroundColor3 = Color3.fromRGB(0,0,0) -- Lighter brown
+Title.TextSize = 20
 Title.Parent = MainFrame
 
 -- Round the title
@@ -297,8 +296,8 @@ end)
 -- Button functionality
 ToggleButton.MouseButton1Click:Connect(function()
     ringPartsEnabled = not ringPartsEnabled
-    ToggleButton.Text = ringPartsEnabled and "Ring Parts On" or "Bear Ring Off"
-    ToggleButton.BackgroundColor3 = ringPartsEnabled and Color3.fromRGB(50, 205, 50) or Color3.fromRGB(160, 82, 45)
+    ToggleButton.Text = ringPartsEnabled and "Bear Ring On" or "Bear Ring Off"
+    ToggleButton.BackgroundColor3 = ringPartsEnabled and Color3.fromRGB(50, 205, 50) or Color3.fromRGB(255,255,255)
     playSound("12221967")
 end)
 

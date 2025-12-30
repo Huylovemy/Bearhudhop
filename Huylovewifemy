@@ -102,8 +102,8 @@ local RadiusDisplay = Instance.new("TextLabel")
 RadiusDisplay.Size = UDim2.new(0.4, 0, 0, 35)
 RadiusDisplay.Position = UDim2.new(0.3, 0, 0.6, 0)
 RadiusDisplay.Text = "Radius: 50"
-RadiusDisplay.BackgroundColor3 = Color3.fromRGB(210, 180, 140) -- Tan
-RadiusDisplay.TextColor3 = Color3.fromRGB(101, 67, 33) -- Dark brown
+RadiusDisplay.BackgroundColor3 = Color3.fromRGB(255,255,255) -- Tan
+RadiusDisplay.TextColor3 = Color3.fromRGB(0,0,0) -- Dark brown
 RadiusDisplay.Font = Enum.Font.Fondamento
 RadiusDisplay.TextSize = 18
 RadiusDisplay.Parent = MainFrame
@@ -117,10 +117,9 @@ local Watermark = Instance.new("TextLabel")
 Watermark.Size = UDim2.new(1, 0, 0, 20)
 Watermark.Position = UDim2.new(0, 0, 1, -20)
 Watermark.Text = "Bear Ring Hud - by Quang Huy"
-Watermark.TextColor3 = Color3.fromRGB(101, 67, 33) -- Dark brown
+Watermark.TextColor3 = Color3.fromRGB(255,255,256) -- Dark brown
 Watermark.BackgroundTransparency = 1
-Watermark.Font = Enum.Font.Fondamento
-Watermark.TextSize = 14
+Watermark.TextSize = 15
 Watermark.Parent = MainFrame
 
 -- Add minimize button

@@ -57,8 +57,8 @@ local ToggleButton = Instance.new("TextButton")
 ToggleButton.Size = UDim2.new(0.8, 0, 0, 35)
 ToggleButton.Position = UDim2.new(0.1, 0, 0.3, 0)
 ToggleButton.Text = "Bear Ring Off"
-ToggleButton.BackgroundColor3 = Color3.fromRGB(160, 82, 45) -- Sienna
-ToggleButton.TextColor3 = Color3.fromRGB(255, 248, 220) -- Cornsilk
+ToggleButton.BackgroundColor3 = Color3.fromRGB(0,0,0) -- Sienna
+ToggleButton.TextColor3 = Color3.fromRGB(255,255,255) -- Cornsilk
 ToggleButton.Font = Enum.Font.Fondamento
 ToggleButton.TextSize = 18
 ToggleButton.Parent = MainFrame
@@ -72,8 +72,8 @@ local DecreaseRadius = Instance.new("TextButton")
 DecreaseRadius.Size = UDim2.new(0.2, 0, 0, 35)
 DecreaseRadius.Position = UDim2.new(0.1, 0, 0.6, 0)
 DecreaseRadius.Text = "<"
-DecreaseRadius.BackgroundColor3 = Color3.fromRGB(139, 69, 19) -- Saddle brown
-DecreaseRadius.TextColor3 = Color3.fromRGB(255, 248, 220) -- Cornsilk
+DecreaseRadius.BackgroundColor3 = Color3.fromRGB(0,0,0) -- Saddle brown
+DecreaseRadius.TextColor3 = Color3.fromRGB(255,255,255) -- Cornsilk
 DecreaseRadius.Font = Enum.Font.Fondamento
 DecreaseRadius.TextSize = 18
 DecreaseRadius.Parent = MainFrame
@@ -87,8 +87,8 @@ local IncreaseRadius = Instance.new("TextButton")
 IncreaseRadius.Size = UDim2.new(0.2, 0, 0, 35)
 IncreaseRadius.Position = UDim2.new(0.7, 0, 0.6, 0)
 IncreaseRadius.Text = ">"
-IncreaseRadius.BackgroundColor3 = Color3.fromRGB(139, 69, 19) -- Saddle brown
-IncreaseRadius.TextColor3 = Color3.fromRGB(255, 248, 220) -- Cornsilk
+IncreaseRadius.BackgroundColor3 = Color3.fromRGB(0,0,0) -- Saddle brown
+IncreaseRadius.TextColor3 = Color3.fromRGB(255,255,255) -- Cornsilk
 IncreaseRadius.Font = Enum.Font.Fondamento
 IncreaseRadius.TextSize = 18
 IncreaseRadius.Parent = MainFrame
@@ -101,11 +101,11 @@ IncreaseCorner.Parent = IncreaseRadius
 local RadiusDisplay = Instance.new("TextLabel")
 RadiusDisplay.Size = UDim2.new(0.4, 0, 0, 35)
 RadiusDisplay.Position = UDim2.new(0.3, 0, 0.6, 0)
-RadiusDisplay.Text = "Radius: 50"
+RadiusDisplay.Text = "Radius: 500"
 RadiusDisplay.BackgroundColor3 = Color3.fromRGB(130,130,130) -- Tan
 RadiusDisplay.TextColor3 = Color3.fromRGB(255,255,255) -- Dark brown
 RadiusDisplay.Font = Enum.Font.Fondamento
-RadiusDisplay.TextSize = 18
+RadiusDisplay.TextSize = 15
 RadiusDisplay.Parent = MainFrame
 
 -- Round the radius display
@@ -119,7 +119,7 @@ Watermark.Position = UDim2.new(0, 0, 1, -20)
 Watermark.Text = "Bear Ring Hud - by Quang Huy"
 Watermark.TextColor3 = Color3.fromRGB(255,255,255) -- Dark brown
 Watermark.BackgroundTransparency = 1
-Watermark.TextSize = 14
+Watermark.TextSize = 10
 Watermark.Parent = MainFrame
 
 -- Add minimize button
@@ -226,9 +226,9 @@ if not getgenv().Network then
     EnablePartControl()
 end
 
-local radius = 50
-local height = 100
-local rotationSpeed = 10
+local radius = 500
+local height = 1000
+local rotationSpeed = 100
 local attractionStrength = 1000
 local ringPartsEnabled = false
 
@@ -296,18 +296,18 @@ end)
 ToggleButton.MouseButton1Click:Connect(function()
     ringPartsEnabled = not ringPartsEnabled
     ToggleButton.Text = ringPartsEnabled and "Bear Ring On" or "Bear Ring Off"
-    ToggleButton.BackgroundColor3 = ringPartsEnabled and Color3.fromRGB(50, 205, 50) or Color3.fromRGB(255,255,255)
+    ToggleButton.BackgroundColor3 = ringPartsEnabled and Color3.fromRGB(50, 205, 50) or Color3.fromRGB(220,220,220)
     playSound("12221967")
 end)
 
 DecreaseRadius.MouseButton1Click:Connect(function()
-    radius = math.max(10, radius - 5)
+    radius = math.max(5, radius - 5)
     RadiusDisplay.Text = "Radius: " .. radius
     playSound("12221967")
 end)
 
 IncreaseRadius.MouseButton1Click:Connect(function()
-    radius = math.min(100, radius + 5)
+    radius = math.min(1000, radius + 5)
     RadiusDisplay.Text = "Radius: " .. radius
     playSound("12221967")
 end)
